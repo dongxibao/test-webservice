@@ -45,7 +45,6 @@ public class TestInsertUser {
         TestServerService testServerServiceImplPort = testServerService_service.getTestServerServiceImplPort();
         
         // 需要账号密码
-        TestServerService testServerServiceImplPort = testServerService_service.getTestServerServiceImplPort();
         BindingProvider provider = (BindingProvider) testServerServiceImplPort;
         Map<String, Object> context = provider.getRequestContext();
         context.put(BindingProvider.USERNAME_PROPERTY, "username");
