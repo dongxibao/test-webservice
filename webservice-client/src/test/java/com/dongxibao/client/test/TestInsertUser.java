@@ -43,6 +43,14 @@ public class TestInsertUser {
     public void testInsertUser() {
         TestServerService_Service testServerService_service = new TestServerService_Service();
         TestServerService testServerServiceImplPort = testServerService_service.getTestServerServiceImplPort();
+        
+        // 需要账号密码
+        TestServerService testServerServiceImplPort = testServerService_service.getTestServerServiceImplPort();
+        BindingProvider provider = (BindingProvider) testServerServiceImplPort;
+        Map<String, Object> context = provider.getRequestContext();
+        context.put(BindingProvider.USERNAME_PROPERTY, "username");
+        context.put(BindingProvider.PASSWORD_PROPERTY, "password");
+        
         UserDTO userDTO = new UserDTO();
         userDTO.setAge(22);
         userDTO.setName("test");
